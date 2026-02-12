@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import WaitlistSlider from './WaitlistSlider';
 
@@ -45,13 +46,12 @@ function Navbar() {
                             >
                                 Services
                             </a>
-                            <a
-                                href="#contact"
-                                onClick={(e) => handleSmoothScroll(e, 'contact')}
+                            <Link
+                                to="/contact"
                                 className="text-[14px] font-medium text-[#2B2B2B] hover:text-[#1E1E1E] transition-colors"
                             >
                                 Contact us
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Join Button - Always Visible */}

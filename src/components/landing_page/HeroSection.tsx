@@ -1,17 +1,7 @@
 import { ChevronDown } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 function HeroSection() {
-    const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end start"]
-    });
-
-    // Parallax effect: Subtle movement to prevent gaps
-    const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
-
     // Smooth scroll to services section
     const scrollToServices = () => {
         const servicesSection = document.getElementById('services');
@@ -31,20 +21,19 @@ function HeroSection() {
                 <div className="pt-10 text-center relative z-0 px-4 md:px-0">
                     <h1 className="leading-tight">
                         <span className="block font-semibold text-[#1E1E1E] text-3xl md:text-5xl">
-                            Pick Your
+                            Beauty, on Your terms
                         </span>
                         <span className="block font-bold italic text-[#E84A7F] text-3xl md:text-5xl">
-                            Favourite Artist
+                            Discover, compare and book verified beauty professionals
                         </span>
                     </h1>
                 </div>
 
                 {/* Image Collage Section - Full width edge to edge */}
-                <div ref={containerRef} className="relative w-full z-10 mt-8 md:mt-0">
+                <div className="relative w-full z-10 mt-8 md:mt-0">
                     {/* Desktop Fan Animation */}
                     <motion.div
                         className="hidden md:block w-full relative h-[450px]"
-                        style={{ y }}
                         initial={{ opacity: 0 }}
                         animate={{
                             opacity: 1,
@@ -59,10 +48,6 @@ function HeroSection() {
                                 delay: 2.0 // Wait for spread to finish before breathing starts
                             }
                         }}
-                        whileHover={{
-                            scale: 1.02,
-                            transition: { duration: 0.3 }
-                        }}
                     >
                         {/* Define the slice styles to reuse the image */}
                         {/* 5 Slices. Assuming 20% width each roughly.
@@ -74,7 +59,7 @@ function HeroSection() {
                         <motion.div
                             className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-size-[100%_auto] z-10"
                             style={{
-                                backgroundImage: 'url("/info/landing/hero/Group 625888.png")',
+                                backgroundImage: 'url("/info/landing/hero/Group 625888.webp")',
                                 clipPath: 'inset(0 80% 0 0)',
                             }}
                             initial={{ x: '40%' }}
@@ -86,7 +71,7 @@ function HeroSection() {
                         <motion.div
                             className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-size-[100%_auto] z-20"
                             style={{
-                                backgroundImage: 'url("/info/landing/hero/Group 625888.png")',
+                                backgroundImage: 'url("/info/landing/hero/Group 625888.webp")',
                                 clipPath: 'inset(0 60% 0 20%)',
                             }}
                             initial={{ x: '20%' }}
@@ -98,7 +83,7 @@ function HeroSection() {
                         <motion.div
                             className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-size-[100%_auto] z-30"
                             style={{
-                                backgroundImage: 'url("/info/landing/hero/Group 625888.png")',
+                                backgroundImage: 'url("/info/landing/hero/Group 625888.webp")',
                                 clipPath: 'inset(0 40% 0 40%)',
                             }}
                             // Breathing animation on the center card (or all? User asked for breathing. Let's apply breathing to the CONTAINER to move them all together)
@@ -112,7 +97,7 @@ function HeroSection() {
                         <motion.div
                             className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-size-[100%_auto] z-20"
                             style={{
-                                backgroundImage: 'url("/info/landing/hero/Group 625888.png")',
+                                backgroundImage: 'url("/info/landing/hero/Group 625888.webp")',
                                 clipPath: 'inset(0 20% 0 60%)',
                             }}
                             initial={{ x: '-20%' }}
@@ -124,7 +109,7 @@ function HeroSection() {
                         <motion.div
                             className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-size-[100%_auto] z-10"
                             style={{
-                                backgroundImage: 'url("/info/landing/hero/Group 625888.png")',
+                                backgroundImage: 'url("/info/landing/hero/Group 625888.webp")',
                                 clipPath: 'inset(0 0 0 80%)',
                             }}
                             initial={{ x: '-40%' }}
@@ -134,8 +119,8 @@ function HeroSection() {
 
                         {/* Ghost image for sizing - invisible but takes up space to set container height correctly */}
                         <img
-                            src="/info/landing/hero/Group 625888.png"
-                            alt="Beauty and makeup artists collage"
+                            src="/info/landing/hero/Group 625888.webp"
+                            alt="Beauty and makeup artists collage — Mimora platform"
                             className="w-full h-auto opacity-0 pointer-events-none"
                         />
                     </motion.div>
@@ -156,7 +141,7 @@ function HeroSection() {
                         <div
                             className="w-full h-full bg-no-repeat bg-center"
                             style={{
-                                backgroundImage: 'url("/info/landing/hero/Group 625888.png")',
+                                backgroundImage: 'url("/info/landing/hero/Group 625888.webp")',
                                 backgroundSize: '240% auto' // Zoom in significantly to show middle sections prominently
                             }}
                         />
@@ -174,6 +159,7 @@ function HeroSection() {
                 {/* Pink bounce button - sits above the grey strip */}
                 <button
                     onClick={scrollToServices}
+                    aria-label="Scroll to services section"
                     className="flex items-center justify-center w-11 h-11 rounded-lg bg-[#E84A7F] shadow-lg shadow-[#E84A7F]/25 animate-gentle-bounce cursor-pointer hover:scale-105 transition-transform"
                 >
                     <ChevronDown className="w-5 h-5 text-white" strokeWidth={2.5} />

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle, Loader2, User, Mail, Phone, ChevronDown, PartyPopper } from 'lucide-react';
+import { sendWelcomeEmail } from '../../services/emailService';
 
 // ─── LocalStorage helpers ───────────────────────────────────────────
 const WAITLIST_STORAGE_KEY = 'mimora_waitlist_submitted';
@@ -99,8 +100,15 @@ function validate(data: FormData): FormErrors {
 
     if (!data.phone.trim()) {
         errors.phone = 'Phone number is required';
-    } else if (!/^\+?[\d\s\-()]{7,15}$/.test(data.phone.trim())) {
-        errors.phone = 'Enter a valid phone number';
+    } else {
+        // Extract only digits from phone number
+        const digits = data.phone.replace(/\D/g, '');
+        // Should be exactly 10 digits (excluding +91)
+        if (digits.length !== 10) {
+            errors.phone = 'Phone number must be exactly 10 digits';
+        } else if (!/^[6-9]/.test(digits)) {
+            errors.phone = 'Phone number must start with 6, 7, 8, or 9';
+        }
     }
 
     if (!data.category) {
@@ -250,16 +258,40 @@ function WaitlistSlider({ isOpen, onClose }: WaitlistSliderProps) {
         if (Object.keys(validationErrors).length > 0) return;
 
         setIsSubmitting(true);
-        const ok = await submitToHubSpot(formData);
-        setIsSubmitting(false);
 
-        if (ok) {
+        try {
+            // Submit to HubSpot
+            const hubspotSuccess = await submitToHubSpot(formData);
+
+            if (!hubspotSuccess) {
+                setIsSubmitting(false);
+                setErrors({
+                    category: 'Failed to submit. Please try again or contact support.'
+                });
+                return;
+            }
+
+            // Store submission in localStorage
             storeSubmission(formData.name, formData.email);
+
+            // Send welcome email (non-blocking, silent failure)
+            sendWelcomeEmail({
+                name: formData.name,
+                email: formData.email,
+                role: formData.category as 'artist' | 'customer',
+            }).catch((error) => {
+                // Log error silently, don't disrupt user experience
+                console.error('Failed to send welcome email:', error);
+            });
+
             setIsSuccess(true);
-        } else {
-            // Even on failure, show success for demo; replace with error toast in production
-            storeSubmission(formData.name, formData.email);
-            setIsSuccess(true);
+        } catch (error) {
+            console.error('Submission error:', error);
+            setErrors({
+                category: 'An unexpected error occurred. Please try again.'
+            });
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -463,9 +495,14 @@ function WaitlistSlider({ isOpen, onClose }: WaitlistSliderProps) {
                                 <input
                                     type="tel"
                                     value={formData.phone}
-                                    onChange={(e) => handleChange('phone', e.target.value)}
+                                    onChange={(e) => {
+                                        // Only allow digits and limit to 10
+                                        const value = e.target.value.replace(/\D/g, '').slice(0, 10);
+                                        handleChange('phone', value);
+                                    }}
                                     onBlur={() => handleBlur('phone')}
-                                    placeholder="+91 98765 43210"
+                                    placeholder="9876543210"
+                                    maxLength={10}
                                     className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm bg-[#FAFAFA] outline-none transition-all duration-200
                                         ${errors.phone && touched.phone
                                             ? 'border-red-400 focus:border-red-400 focus:ring-2 focus:ring-red-100'
@@ -496,13 +533,6 @@ function WaitlistSlider({ isOpen, onClose }: WaitlistSliderProps) {
                             <button
                                 type="button"
                                 onClick={() => setCategoryOpen(!categoryOpen)}
-                                onBlur={() => {
-                                    // Delay to allow click on option
-                                    setTimeout(() => {
-                                        setCategoryOpen(false);
-                                        handleBlur('category');
-                                    }, 150);
-                                }}
                                 className={`w-full flex items-center justify-between pl-4 pr-3 py-3 rounded-xl border text-sm bg-[#FAFAFA] outline-none transition-all duration-200 text-left
                                     ${errors.category && touched.category
                                         ? 'border-red-400 focus:border-red-400 focus:ring-2 focus:ring-red-100'

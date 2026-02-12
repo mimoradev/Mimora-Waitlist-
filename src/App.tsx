@@ -7,6 +7,9 @@ import PageLoader from './components/common/PageLoader'
 
 // Pages
 const LandingPage = lazy(() => import('./pages/LandingPage'))
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
+const TermsOfService = lazy(() => import('./pages/TermsOfService'))
+const Contact = lazy(() => import('./pages/Contact'))
 
 function App() {
   useEffect(() => {
@@ -36,6 +39,9 @@ function App() {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </Suspense>
       </div>
