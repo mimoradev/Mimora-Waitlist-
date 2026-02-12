@@ -32,7 +32,7 @@ const AppDownloadSection: React.FC = () => {
                                 transition={{ duration: 0.6 }}
                             >
                                 <div className="flex items-center gap-3 mb-6">
-                                    <span className="text-white text-[15px] font-medium">
+                                    <span className="text-white text-[18px] font-semibold">
                                         Launching soon
                                     </span>
                                     <div className="flex gap-2">
@@ -46,10 +46,6 @@ const AppDownloadSection: React.FC = () => {
                                     <br />
                                     Mobile Experience
                                 </h2>
-
-                                <p className="text-white/90 text-[17px] mb-8 leading-relaxed">
-                                    We are going to launch our mobile application launching soon.
-                                </p>
 
                                 <motion.button
                                     onClick={openSlider}
@@ -85,7 +81,7 @@ const AppDownloadSection: React.FC = () => {
                                 transition={{ duration: 0.6 }}
                             >
                                 <div className="flex items-center gap-2 mb-5">
-                                    <span className="text-white text-[14px] font-medium">
+                                    <span className="text-white text-[17px] font-semibold">
                                         Launching soon
                                     </span>
                                     <div className="flex gap-1.5">
@@ -97,10 +93,6 @@ const AppDownloadSection: React.FC = () => {
                                 <h2 className="text-white text-[36px] font-bold leading-[1.1] mb-5">
                                     Crafting our Mobile Experience
                                 </h2>
-
-                                <p className="text-white/90 text-[15px] mb-7 leading-relaxed">
-                                    We are going to launch our mobile application launching soon.
-                                </p>
 
                                 <motion.button
                                     onClick={openSlider}
