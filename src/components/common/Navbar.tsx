@@ -24,13 +24,13 @@ function Navbar() {
     return (
         <>
             <nav className="sticky top-0 left-0 right-0 z-50 bg-white" style={{ height: '64px' }}>
-                <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between px-6 md:px-10">
+                <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between px-4 md:px-8">
                     {/* Logo */}
                     <a href="/" className="flex items-center">
                         <img
                             src="/info/common/logo.png"
                             alt="Mimora"
-                            style={{ height: '28px', width: 'auto' }}
+                            style={{ height: '24px', width: 'auto' }}
                             className="object-contain"
                         />
                     </a>
