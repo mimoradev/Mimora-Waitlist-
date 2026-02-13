@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import { ArrowRight } from "lucide-react";
 import WaitlistSlider from "../common/WaitlistSlider";
 
 interface Feature {
@@ -86,15 +87,13 @@ const FeaturesSection: React.FC = () => {
                                 {/* Text Container - Fixed Width */}
                                 <div className="w-full md:w-auto flex flex-col items-start justify-center">
                                     <div className="w-full md:w-[450px]">
-                                        <h3 className="text-[26px] md:text-[28px] font-bold text-[#1E1E1E] mb-4 tracking-tight">
-                                            {feature.title}{" "}
-                                            <span
+                                        <h3 className="text-[26px] md:text-[28px] font-bold text-[#1E1E1E] mb-4 tracking-tight flex items-center gap-2">
+                                            {feature.title}
+                                            <ArrowRight
                                                 onClick={openSlider}
-                                                style={{ fontWeight: 900 }}
-                                                className="font-extrabold cursor-pointer hover:text-[#E84A7F] transition-colors duration-200"
-                                            >
-                                                →
-                                            </span>
+                                                className="w-7 h-7 cursor-pointer hover:text-[#E84A7F] transition-colors duration-200"
+                                                strokeWidth={3}
+                                            />
                                         </h3>
                                         <div className="space-y-3">
                                             {feature.description.map((desc, i) => (
