@@ -80,10 +80,7 @@ const FeaturesSection: React.FC = () => {
                             <div className="w-full md:w-auto flex flex-col items-start justify-center">
                                 <div className="w-full md:w-[450px]">
                                     <h3 className="text-[26px] md:text-[28px] font-bold text-[#1E1E1E] mb-4 flex items-center group cursor-pointer tracking-tight">
-                                        {feature.title}
-                                        <span className="ml-2.5 transition-transform duration-250 ease-in-out group-hover:translate-x-[4px]">
-                                            →
-                                        </span>
+                                        {feature.title} →
                                     </h3>
                                     <div className="space-y-3">
                                         {feature.description.map((desc, i) => (

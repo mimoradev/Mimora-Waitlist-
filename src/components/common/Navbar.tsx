@@ -30,7 +30,7 @@ function Navbar() {
                         <img
                             src="/info/common/logo.png"
                             alt="Mimora"
-                            style={{ height: '24px', width: 'auto' }}
+                            style={{ height: '38px', width: 'auto' }}
                             className="object-contain"
                         />
                     </a>
