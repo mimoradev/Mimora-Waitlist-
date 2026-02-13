@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
+import WaitlistSlider from "../common/WaitlistSlider";
 
 interface Feature {
     title: string;
@@ -40,63 +41,79 @@ const features: Feature[] = [
 ];
 
 const FeaturesSection: React.FC = () => {
+    const [isSliderOpen, setIsSliderOpen] = useState(false);
+
+    const openSlider = useCallback(() => setIsSliderOpen(true), []);
+    const closeSlider = useCallback(() => setIsSliderOpen(false), []);
+
     return (
-        <section id="services" className="w-full bg-[#FFFFFF] py-[80px] flex flex-col items-center">
-            {/* Header */}
-            <div className="max-w-[1240px] w-full px-6 md:px-12 flex flex-col items-center mb-20 text-center">
-                <h2 className="text-[32px] md:text-[36px] font-semibold text-[#1E1E1E] mb-4 leading-tight">
-                    Beauty Services Made Simple
-                </h2>
-                <p className="text-[#6B6B6B] text-[15px] max-w-[550px] leading-relaxed">
-                    Mimora helps you discover, compare, and book professional beauty services with confidence — no calls, no confusion.
-                </p>
-            </div>
+        <>
+            <section id="services" className="w-full bg-[#FFFFFF] py-[80px] flex flex-col items-center">
+                {/* Header */}
+                <div className="max-w-[1240px] w-full px-6 md:px-12 flex flex-col items-center mb-20 text-center">
+                    <h2 className="text-[32px] md:text-[36px] font-semibold text-[#1E1E1E] mb-4 leading-tight">
+                        Beauty Services Made Simple
+                    </h2>
+                    <p className="text-[#6B6B6B] text-[15px] max-w-[550px] leading-relaxed">
+                        Mimora helps you discover, compare, and book professional beauty services with confidence — no calls, no confusion.
+                    </p>
+                </div>
 
-            {/* Feature Blocks - Fixed Width Containers */}
-            <div className="max-w-[1240px] w-full px-6 md:px-12 flex flex-col gap-16 md:gap-28">
-                {features.map((feature, index) => {
-                    const isEven = index % 2 === 0; // Row 1 (0): Img Left. Row 2 (1): Text Left.
+                {/* Feature Blocks - Fixed Width Containers */}
+                <div className="max-w-[1240px] w-full px-6 md:px-12 flex flex-col gap-16 md:gap-28">
+                    {features.map((feature, index) => {
+                        const isEven = index % 2 === 0; // Row 1 (0): Img Left. Row 2 (1): Text Left.
 
-                    return (
-                        <div
-                            key={index}
-                            className={`flex flex-col md:flex-row items-center justify-center gap-8 md:gap-6 w-full ${isEven ? "md:flex-row" : "md:flex-row-reverse"
-                                }`}
-                        >
-                            {/* Image Container - Fixed Width */}
-                            <div className="w-full md:w-auto flex justify-center md:justify-end">
-                                <div className="relative overflow-hidden rounded-[24px] w-full max-w-[380px] md:w-[420px] transition-transform duration-400 ease-out hover:scale-[1.015]">
-                                    <img
-                                        src={feature.image}
-                                        alt={feature.title}
-                                        loading="lazy"
-                                        decoding="async"
-                                        className="w-full h-auto object-cover block"
-                                    />
+                        return (
+                            <div
+                                key={index}
+                                className={`flex flex-col md:flex-row items-center justify-center gap-8 md:gap-6 w-full ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+                                    }`}
+                            >
+                                {/* Image Container - Fixed Width */}
+                                <div className="w-full md:w-auto flex justify-center md:justify-end">
+                                    <div className="relative overflow-hidden rounded-[24px] w-full max-w-[380px] md:w-[420px] transition-transform duration-400 ease-out hover:scale-[1.015]">
+                                        <img
+                                            src={feature.image}
+                                            alt={feature.title}
+                                            loading="lazy"
+                                            decoding="async"
+                                            className="w-full h-auto object-cover block"
+                                        />
+                                    </div>
                                 </div>
-                            </div>
 
-                            {/* Text Container - Fixed Width */}
-                            <div className="w-full md:w-auto flex flex-col items-start justify-center">
-                                <div className="w-full md:w-[450px]">
-                                    <h3 className="text-[26px] md:text-[28px] font-bold text-[#1E1E1E] mb-4 flex items-center group cursor-pointer tracking-tight">
-                                        {feature.title} →
-                                    </h3>
-                                    <div className="space-y-3">
-                                        {feature.description.map((desc, i) => (
-                                            <div key={i} className="text-[#6B6B6B] text-[15px] md:text-[16px] leading-relaxed flex items-start gap-3">
-                                                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#6B6B6B] shrink-0" />
-                                                <span>{desc}</span>
-                                            </div>
-                                        ))}
+                                {/* Text Container - Fixed Width */}
+                                <div className="w-full md:w-auto flex flex-col items-start justify-center">
+                                    <div className="w-full md:w-[450px]">
+                                        <h3 className="text-[26px] md:text-[28px] font-bold text-[#1E1E1E] mb-4 tracking-tight">
+                                            {feature.title}{" "}
+                                            <span
+                                                onClick={openSlider}
+                                                className="font-black cursor-pointer hover:text-[#E84A7F] transition-colors duration-200"
+                                            >
+                                                →
+                                            </span>
+                                        </h3>
+                                        <div className="space-y-3">
+                                            {feature.description.map((desc, i) => (
+                                                <div key={i} className="text-[#6B6B6B] text-[15px] md:text-[16px] leading-relaxed flex items-start gap-3">
+                                                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#6B6B6B] shrink-0" />
+                                                    <span>{desc}</span>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    );
-                })}
-            </div>
-        </section>
+                        );
+                    })}
+                </div>
+            </section>
+
+            {/* Waitlist Slider */}
+            <WaitlistSlider isOpen={isSliderOpen} onClose={closeSlider} />
+        </>
     );
 };
 
