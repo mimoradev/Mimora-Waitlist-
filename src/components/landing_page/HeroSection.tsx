@@ -19,14 +19,29 @@ function HeroSection() {
             <div className="max-w-[1440px] mx-auto">
                 {/* Headline */}
                 <div className="pt-10 text-center relative z-0 px-4 md:px-0">
-                    <h1 className="leading-tight">
-                        <span className="block font-semibold text-[#1E1E1E] text-3xl md:text-5xl">
+                    <motion.h1
+                        className="leading-tight"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <motion.span
+                            className="block font-bold text-[#1E1E1E] text-5xl md:text-7xl mb-3"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
                             Beauty, on Your terms
-                        </span>
-                        <span className="block font-bold italic text-[#E84A7F] text-3xl md:text-5xl">
+                        </motion.span>
+                        <motion.span
+                            className="block font-semibold italic text-[#E84A7F] text-xl md:text-2xl"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                        >
                             Discover, compare and book verified beauty professionals
-                        </span>
-                    </h1>
+                        </motion.span>
+                    </motion.h1>
                 </div>
 
                 {/* Image Collage Section - Full width edge to edge */}

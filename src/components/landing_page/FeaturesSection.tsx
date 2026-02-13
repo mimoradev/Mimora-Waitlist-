@@ -90,7 +90,8 @@ const FeaturesSection: React.FC = () => {
                                             {feature.title}{" "}
                                             <span
                                                 onClick={openSlider}
-                                                className="font-black cursor-pointer hover:text-[#E84A7F] transition-colors duration-200"
+                                                style={{ fontWeight: 900 }}
+                                                className="font-extrabold cursor-pointer hover:text-[#E84A7F] transition-colors duration-200"
                                             >
                                                 →
                                             </span>
