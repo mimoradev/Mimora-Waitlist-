@@ -28,7 +28,7 @@ function Navbar() {
                     {/* Logo */}
                     <a href="/" className="flex items-center">
                         <img
-                            src="/info/common/logo.png"
+                            src="/info/common/new-logo.png"
                             alt="Mimora"
                             style={{ height: '38px', width: 'auto' }}
                             className="object-contain"
