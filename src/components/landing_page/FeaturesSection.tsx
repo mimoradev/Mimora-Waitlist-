@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-import { ArrowRight } from "lucide-react";
 import WaitlistSlider from "../common/WaitlistSlider";
 
 interface Feature {
