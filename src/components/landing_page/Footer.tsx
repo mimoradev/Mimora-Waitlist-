@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
                 <div className="hidden md:flex justify-between items-center text-[13px] font-medium text-[#6B6B6B]">
                     {/* Left: Copyright & Links */}
                     <div className="flex items-center gap-6">
-                        <span>@2025Mimora.All rights reserved.</span>
+                        <span>@2025Mimora LLP.All rights reserved.</span>
                         <span className="w-0.5 h-0.5 bg-[#6B6B6B] rounded-full"></span>
                         <Link to="/privacy" className="hover:text-black transition-colors">Privacy</Link>
                         <span className="w-0.5 h-0.5 bg-[#6B6B6B] rounded-full"></span>
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
 
                     {/* Copyright */}
                     <div className="text-[13px] text-[#333]">
-                        @2025Mimora.All rights reserved.
+                        @2025Mimora LLP.All rights reserved.
                     </div>
 
                     {/* Links */}
