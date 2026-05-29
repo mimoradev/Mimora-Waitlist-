@@ -1,11 +1,8 @@
-import LegalLayout, {
+﻿import LegalLayout, {
     Section,
     SubHeading,
     LegalTable,
-    CodeBlock,
     Callout,
-    Yes,
-    No,
     type LegalNavItem,
 } from '../components/LegalLayout';
 
@@ -14,22 +11,16 @@ const sections: LegalNavItem[] = [
     { id: 'data-we-collect', label: '2. What Data We Collect' },
     { id: 'why-we-collect', label: '3. Why We Collect Data' },
     { id: 'kyc', label: '4. KYC & Identity Verification' },
-    { id: 'money-flow', label: '5. How Money Flows' },
-    { id: 'secure-fee', label: '6. Secure Booking Fee & Discount' },
-    { id: 'travel-charge', label: '7. Travel Charge Policy' },
-    { id: 'cancellation', label: '8. Cancellation & Refund Policy' },
-    { id: 'edge-cases', label: '9. Edge Cases & Special Scenarios' },
-    { id: 'customer-terms', label: '10. Terms for Customers' },
-    { id: 'artist-terms', label: '11. Terms for Artists' },
-    { id: 'data-security', label: '12. Data Storage & Security' },
-    { id: 'data-sharing', label: '13. Data Sharing' },
-    { id: 'location-data', label: '14. Location Data' },
-    { id: 'user-rights', label: '15. User Rights' },
-    { id: 'data-retention', label: '16. Data Retention' },
-    { id: 'childrens-privacy', label: "17. Children's Privacy" },
-    { id: 'dispute-resolution', label: '18. Dispute Resolution' },
-    { id: 'grievance-officer', label: '19. Grievance Officer' },
-    { id: 'changes', label: '20. Changes to This Policy' },
+    { id: 'travel-charge', label: '5. Travel Charge Policy' },
+    { id: 'cancellation', label: '6. Cancellation & Refund Policy' },
+    { id: 'customer-terms', label: '7. Terms for Customers' },
+    { id: 'artist-terms', label: '8. Terms for Artists' },
+    { id: 'data-security', label: '9. Data Storage & Security' },
+    { id: 'data-sharing', label: '10. Data Sharing' },
+    { id: 'location-data', label: '11. Location Data' },
+    { id: 'data-retention', label: '12. Data Retention' },
+    { id: 'dispute-resolution', label: '13. Dispute Resolution' },
+    { id: 'changes', label: '14. Changes to This Policy' },
     { id: 'agreement', label: 'Agreement' },
 ];
 
@@ -39,31 +30,6 @@ function PrivacyPolicy() {
             title="Privacy Policy"
             lastUpdated="2025 (Version 1.0)"
             sections={sections}
-            intro={
-                <>
-                    <p>
-                        <strong>Version:</strong> 1.0 &nbsp;|&nbsp; <strong>Effective Date:</strong> 2025
-                    </p>
-                    <p className="mt-1">
-                        <strong>Applicable Law:</strong> Indian Contract Act, 1872 | IT Act, 2000 | Consumer
-                        Protection Act, 2019 | DPDP Act, 2023
-                    </p>
-                    <p className="mt-1">
-                        <strong>Contact:</strong>{' '}
-                        <a href="mailto:privacy@mimora.in" className="text-[#E84A7F] hover:underline">
-                            privacy@mimora.in
-                        </a>{' '}
-                        |{' '}
-                        <a href="mailto:legal@mimora.in" className="text-[#E84A7F] hover:underline">
-                            legal@mimora.in
-                        </a>{' '}
-                        |{' '}
-                        <a href="mailto:support@mimora.in" className="text-[#E84A7F] hover:underline">
-                            support@mimora.in
-                        </a>
-                    </p>
-                </>
-            }
         >
             {/* 1. Who We Are */}
             <Section id="who-we-are" title="1. Who We Are">
@@ -79,7 +45,7 @@ function PrivacyPolicy() {
                 </ul>
                 <p>
                     The service contract is between the <strong>Customer and the Artist</strong>. Mimora's
-                    liability is limited to functions it directly controls — platform access, payment escrow, and
+                    liability is limited to functions it directly controls: platform access, payment escrow, and
                     dispute facilitation.
                 </p>
             </Section>
@@ -91,11 +57,11 @@ function PrivacyPolicy() {
                     headers={['Category', 'Data Points']}
                     rows={[
                         ['Identity', 'Name, email address, mobile number'],
-                        ['Account', 'Login credentials (password stored as bcrypt hash — never plaintext)'],
+                        ['Account', 'Login credentials (password stored as bcrypt hash, never plaintext)'],
                         ['Booking', 'Service history, booking dates, locations, package selections'],
                         [
                             'Payment',
-                            'Payment method type, UPI handle / masked card details (full card data handled only by Cashfree — not stored by Mimora)',
+                            'Payment method type, UPI handle / masked card details (full card data handled only by Cashfree, not stored by Mimora)',
                         ],
                         ['Location', 'GPS location for travel charge calculation and Artist matching'],
                         ['Device & Usage', 'Device type, OS, app version, IP address, session logs'],
@@ -110,7 +76,7 @@ function PrivacyPolicy() {
                         ['Identity', 'Name, mobile number, email address, profile photograph'],
                         [
                             'KYC',
-                            'PAN Card or Aadhaar number (processed via DigiLocker / KYC partner — raw documents not stored on Mimora servers)',
+                            'PAN Card or Aadhaar number (processed via DigiLocker / KYC partner, raw documents not stored on Mimora servers)',
                         ],
                         [
                             'Identity Verification',
@@ -180,19 +146,19 @@ function PrivacyPolicy() {
                 <LegalTable
                     headers={['Verification Component', 'Required Status']}
                     rows={[
-                        ['KYC Status (PAN / Aadhaar)', <Yes>VERIFIED</Yes>],
-                        ['Identity Status (Live Photo Match)', <Yes>VERIFIED</Yes>],
+                        ['KYC Status (PAN / Aadhaar)', 'VERIFIED'],
+                        ['Identity Status (Live Photo Match)', 'VERIFIED'],
                     ]}
                 />
 
-                <SubHeading>4.3 Part 1 — KYC Document Verification</SubHeading>
+                <SubHeading>4.3 Part 1: KYC Document Verification</SubHeading>
                 <p>Artists must verify identity using one of the following:</p>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>
-                        <strong>PAN Card</strong> — issued by the Income Tax Department of India
+                        <strong>PAN Card</strong>: issued by the Income Tax Department of India
                     </li>
                     <li>
-                        <strong>Aadhaar Card</strong> — issued by UIDAI
+                        <strong>Aadhaar Card</strong>: issued by UIDAI
                     </li>
                 </ul>
                 <p>
@@ -205,12 +171,12 @@ function PrivacyPolicy() {
                     </li>
                     <li>Platform receives a verification status confirmation from the KYC provider</li>
                     <li>
-                        Document data is processed and stored by the KYC partner —{' '}
+                        Document data is processed and stored by the KYC partner -{' '}
                         <strong>Mimora does not store raw document copies on its own servers</strong>
                     </li>
                 </ol>
 
-                <SubHeading>4.4 Part 2 — Identity Verification (Live Photo Match)</SubHeading>
+                <SubHeading>4.4 Part 2: Identity Verification (Live Photo Match)</SubHeading>
                 <p>To prevent impersonation and account fraud:</p>
                 <ol className="list-decimal pl-6 space-y-1">
                     <li>Artist uploads a clear, recent profile photograph</li>
@@ -233,120 +199,8 @@ function PrivacyPolicy() {
                 </p>
             </Section>
 
-            {/* 5. How Money Flows */}
-            <Section id="money-flow" title="5. How Money Flows (Payment Architecture)">
-                <SubHeading>Step 1 — Customer Pays at Booking Confirmation</SubHeading>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>Amount = Service Price + Travel Charge + Secure Booking Fee</li>
-                    <li>UPI preferred</li>
-                    <li>
-                        <strong>Cashfree collection fee: 1.6% MDR</strong> on gross amount
-                    </li>
-                </ul>
-
-                <SubHeading>Step 2 — Money Held in Cashfree Escrow</SubHeading>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>Full amount sits in Cashfree's nodal bank account</li>
-                    <li>Neither Artist nor Mimora can access it during this period</li>
-                    <li>Calendar slot blocked only after successful escrow confirmation</li>
-                </ul>
-
-                <SubHeading>Step 3 — Service Delivered → OTP Verification</SubHeading>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>Customer receives OTP via SMS and/or app after service delivery</li>
-                    <li>Customer shares OTP with Artist upon satisfaction</li>
-                    <li>Artist enters OTP on Platform to confirm completion</li>
-                </ul>
-
-                <SubHeading>Step 4 — Cashfree Releases Payout to Artist</SubHeading>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>Mimora calls the Cashfree Payout API</li>
-                    <li>
-                        Artist always receives their <strong>full service price</strong> — Mimora never deducts from
-                        the Artist's stated price
-                    </li>
-                    <li>
-                        <strong>Cashfree payout fee: Rs. 2–5 flat</strong> per transfer
-                    </li>
-                </ul>
-
-                <SubHeading>Sample Booking Breakdown — Rs. 1,000 Service + 3 km Travel</SubHeading>
-                <LegalTable
-                    headers={['Line Item', 'Amount']}
-                    rows={[
-                        ["Artist's service price", 'Rs. 1,000.00'],
-                        ['Travel charge (3 km — 1.5 km free + 1.5 × Rs. 10)', 'Rs. 15.00'],
-                        ['Secure Booking Fee', 'Rs. 50.00'],
-                        [<strong>Total customer pays</strong>, <strong>Rs. 1,065.00</strong>],
-                        ['Cashfree collection fee (1.6%)', '– Rs. 17.04'],
-                        ['Cashfree payout fee (flat)', '– Rs. 5.00'],
-                        [<strong>Artist receives</strong>, <strong>Rs. 1,000.00</strong>],
-                        [<strong>Platform earns</strong>, <strong>~Rs. 42.96</strong>],
-                    ]}
-                />
-            </Section>
-
-            {/* 6. Secure Booking Fee & Discount */}
-            <Section id="secure-fee" title="6. Secure Booking Fee & Instant Discount">
-                <SubHeading>Fee Tiers (Based on Artist Price)</SubHeading>
-                <LegalTable
-                    headers={['Artist Price Range', 'Secure Fee %']}
-                    rows={[
-                        ['Up to Rs. 500', '5%'],
-                        ['Rs. 501 – Rs. 1,000', '4%'],
-                        ['Rs. 1,001 – Rs. 2,000', '3.5%'],
-                        ['Above Rs. 2,000', '3%'],
-                    ]}
-                />
-
-                <SubHeading>Discount Logic</SubHeading>
-                <p>After Cashfree takes its cut from the Secure Booking Fee, the remainder is split:</p>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>
-                        <strong>30% stays with Mimora</strong> (platform operations)
-                    </li>
-                    <li>
-                        <strong>70% is instantly discounted off the Customer's bill</strong>
-                    </li>
-                </ul>
-                <CodeBlock>
-                    {`secure_fee        = artist_price × fee_pct
-gross_charge      = artist_price + secure_fee + travel
-cashfree_cut      = gross_charge × 1.6%           [internal]
-payout_fee        = Rs. 5                          [internal]
-remaining         = secure_fee − cashfree_cut − payout_fee
-  → IF remaining ≤ 0: discount = 0, no savings line shown (bookings under ~Rs. 152)
-you_keep          = remaining × 30%                [internal]
-discount          = remaining × 70%                [shown to customer in green]
-final_charge      = gross_charge − discount
-artist_payout     = artist_price                   [always protected]`}
-                </CodeBlock>
-
-                <SubHeading>What Customer Sees at Checkout</SubHeading>
-                <LegalTable
-                    headers={['Line Item', 'Shown?']}
-                    rows={[
-                        ['Artist service price', <Yes>Yes</Yes>],
-                        ['Travel charge', <Yes>Yes (removed if Rs. 0)</Yes>],
-                        [
-                            'Secure Booking Fee',
-                            <Yes>Yes — label: "Secure Booking Fee — covers payment protection & booking guarantee"</Yes>,
-                        ],
-                        ['Secure Fee Savings', <Yes>Yes — in green (only if remaining &gt; 0)</Yes>],
-                        ['Cashfree MDR (1.6%)', <No>No — internal</No>],
-                        ['Cashfree payout fee', <No>No — internal</No>],
-                        ['Platform ops share', <No>No — internal</No>],
-                        [<strong>Total payable</strong>, <Yes><strong>Yes — bold</strong></Yes>],
-                    ]}
-                />
-                <Callout>
-                    Never label it "platform fee." Always use <strong>"Secure Booking Fee"</strong> with the sub-label{' '}
-                    <em>"covers payment protection and booking guarantee."</em>
-                </Callout>
-            </Section>
-
-            {/* 7. Travel Charge Policy */}
-            <Section id="travel-charge" title="7. Travel Charge Policy">
+            {/* 5. Travel Charge Policy */}
+            <Section id="travel-charge" title="5. Travel Charge Policy">
                 <p>
                     Travel charges apply only when the Artist travels to the Customer's location. Studio visits ={' '}
                     <strong>Rs. 0.</strong>
@@ -361,8 +215,8 @@ artist_payout     = artist_price                   [always protected]`}
                 <LegalTable
                     headers={['Distance', 'Charge']}
                     rows={[
-                        ['1.0 km', 'Rs. 0 — FREE'],
-                        ['1.5 km', 'Rs. 0 — FREE'],
+                        ['1.0 km', 'Rs. 0: FREE'],
+                        ['1.5 km', 'Rs. 0: FREE'],
                         ['3.0 km', 'Rs. 15.00'],
                         ['5.0 km', 'Rs. 35.00'],
                         ['10.0 km', 'Rs. 85.00'],
@@ -372,23 +226,23 @@ artist_payout     = artist_price                   [always protected]`}
                     <strong>Rules:</strong>
                 </p>
                 <ul className="list-disc pl-6 space-y-1">
-                    <li>Charges are locked before payment — no recalculation after booking confirmation</li>
-                    <li>One travel charge per booking — not per person, not per package</li>
+                    <li>Charges are locked before payment: no recalculation after booking confirmation</li>
+                    <li>One travel charge per booking: not per person, not per package</li>
                     <li>Multi-package bookings: one travel charge on the combined total</li>
                 </ul>
             </Section>
 
-            {/* 8. Cancellation & Refund Policy */}
-            <Section id="cancellation" title="8. Cancellation & Refund Policy">
+            {/* 6. Cancellation & Refund Policy */}
+            <Section id="cancellation" title="6. Cancellation & Refund Policy">
                 <SubHeading>Golden Rule (All Modules, Non-Negotiable)</SubHeading>
                 <Callout>
                     <strong>
-                        If an Artist cancels at any stage — even minutes before service — the Customer always receives
+                        If an Artist cancels at any stage, even minutes before service, the Customer always receives
                         a 100% refund. The Artist receives zero payout.
                     </strong>
                 </Callout>
 
-                <SubHeading>8.1 Instant Module</SubHeading>
+                <SubHeading>6.1 Instant Module</SubHeading>
                 <LegalTable
                     headers={['Scenario', 'Refund']}
                     rows={[
@@ -400,7 +254,7 @@ artist_payout     = artist_price                   [always protected]`}
                     ]}
                 />
 
-                <SubHeading>8.2 Scheduled Instant Module</SubHeading>
+                <SubHeading>6.2 Scheduled Instant Module</SubHeading>
                 <LegalTable
                     headers={['Scenario', 'Refund']}
                     rows={[
@@ -413,13 +267,13 @@ artist_payout     = artist_price                   [always protected]`}
                     ]}
                 />
 
-                <SubHeading>8.3 Flexi Module (Event Bookings)</SubHeading>
+                <SubHeading>6.3 Flexi Module (Event Bookings)</SubHeading>
                 <p>
                     Designed for weddings, functions, shoots. Advance payments are non-refundable because the Artist
                     blocks the calendar slot irreversibly the moment booking is confirmed.
                 </p>
 
-                <p className="font-semibold text-[#1E1E1E]">Path 1 — Trial Session Only</p>
+                <p className="font-semibold text-[#1E1E1E]">Path 1: Trial Session Only</p>
                 <LegalTable
                     headers={['Scenario', 'Outcome']}
                     rows={[
@@ -432,7 +286,7 @@ artist_payout     = artist_price                   [always protected]`}
                     ]}
                 />
 
-                <p className="font-semibold text-[#1E1E1E]">Path 2 — Direct Full Booking (No Trial)</p>
+                <p className="font-semibold text-[#1E1E1E]">Path 2: Direct Full Booking (No Trial)</p>
                 <LegalTable
                     headers={['Scenario', 'Refund']}
                     rows={[
@@ -444,7 +298,7 @@ artist_payout     = artist_price                   [always protected]`}
                     ]}
                 />
 
-                <p className="font-semibold text-[#1E1E1E]">Path 3 — Advance Payment + Full Booking</p>
+                <p className="font-semibold text-[#1E1E1E]">Path 3: Advance Payment + Full Booking</p>
                 <p>
                     Artist sets their own advance % (e.g., 20%, 30%, 40%) during onboarding. Customer pays advance to
                     lock slot, pays remaining balance before service date.
@@ -455,11 +309,11 @@ artist_payout     = artist_price                   [always protected]`}
                 <LegalTable
                     headers={['Step', 'What Happens', 'Refundable?']}
                     rows={[
-                        ['1 — Booking', 'Customer pays Artist-defined advance', <strong>NEVER — slot locked immediately</strong>],
-                        ['2 — Reminder', 'Platform reminds Customer 48 hrs before to pay balance', '—'],
-                        ['3 — Balance', 'Customer pays remaining amount', 'Depends on timing'],
-                        ['4 — Delivery', 'Artist delivers service', '—'],
-                        ['5 — OTP', 'OTP entered → full amount released to Artist', 'N/A'],
+                        ['1: Booking', 'Customer pays Artist-defined advance', <strong>NEVER: slot locked immediately</strong>],
+                        ['2: Reminder', 'Platform reminds Customer 48 hrs before to pay balance', '-'],
+                        ['3: Balance', 'Customer pays remaining amount', 'Depends on timing'],
+                        ['4: Delivery', 'Artist delivers service', '-'],
+                        ['5: OTP', 'OTP entered → full amount released to Artist', 'N/A'],
                     ]}
                 />
                 <p>
@@ -469,7 +323,7 @@ artist_payout     = artist_price                   [always protected]`}
                     headers={['Scenario', 'Advance', 'Balance (if paid)']}
                     rows={[
                         ['Artist cancels any time', <strong>100% REFUND</strong>, <strong>100% REFUND</strong>],
-                        ['Customer cancels — balance not yet paid', 'NON-REFUNDABLE', 'Not paid — N/A'],
+                        ['Customer cancels: balance not yet paid', 'NON-REFUNDABLE', 'Not paid: N/A'],
                         ['Customer cancels &gt; 7 days before event', 'NON-REFUNDABLE', <strong>100% REFUND</strong>],
                         ['Customer cancels 3–7 days before event', 'NON-REFUNDABLE', <strong>50% REFUND</strong>],
                         ['Customer cancels &lt; 3 days before event', 'NON-REFUNDABLE', <strong>NO REFUND</strong>],
@@ -478,63 +332,24 @@ artist_payout     = artist_price                   [always protected]`}
                 />
                 <Callout>
                     <strong>Why advances are non-refundable:</strong> The Artist immediately blocks that calendar date
-                    and declines all other enquiries — creating an irrecoverable opportunity cost. Customers are shown
+                    and declines all other enquiries, creating an irrecoverable opportunity cost. Customers are shown
                     the non-refundable advance terms clearly and must explicitly accept them before paying. If the
                     Artist cancels after receiving the advance, both the advance and any balance paid are returned to
                     the Customer as a financial penalty.
                 </Callout>
 
-                <SubHeading>8.4 Refund Processing</SubHeading>
+                <SubHeading>6.4 Refund Processing</SubHeading>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>All refunds are processed via Cashfree to the Customer's <strong>original payment method</strong></li>
                     <li>UPI: typically <strong>1–2 business days</strong></li>
                     <li>Bank account / card: <strong>5–7 business days</strong></li>
                     <li>The Secure Booking Fee and Travel Charge are included in full refunds</li>
-                    <li>Cashfree's payment reversal fees are borne by Mimora — not charged to the Customer</li>
+                    <li>Cashfree's payment reversal fees are borne by Mimora: not charged to the Customer</li>
                 </ul>
             </Section>
 
-            {/* 9. Edge Cases */}
-            <Section id="edge-cases" title="9. Edge Cases & Special Scenarios">
-                <LegalTable
-                    headers={['Scenario', 'Policy', 'System Action']}
-                    rows={[
-                        [
-                            <strong>OTP Not Verified by End of Day</strong>,
-                            ' 100% auto-refund to Customer. Artist receives Rs. 0. Booking marked Unverified-Refunded.',
-                            'Cron at 11:55 PM → triggers Cashfree Refund API for all IN_SERVICE bookings with OTP unverified',
-                        ],
-                        [
-                            <strong>Saree Pleating / No Calendar Block</strong>,
-                            'Payment, escrow, OTP, refund logic identical. Backend only skips the calendar block step.',
-                            'Backend flag suppresses calendar block; Cashfree flow unchanged',
-                        ],
-                        [
-                            <strong>Multi-Package Booking</strong>,
-                            'All packages = one Cashfree order. One travel charge + one Secure Booking Fee on the combined total.',
-                            'Single order ID. One payment, one escrow, one refund if needed',
-                        ],
-                        [
-                            <strong>Studio Visit</strong>,
-                            'Travel charge = Rs. 0. All other logic (escrow, OTP, refund, payout) identical.',
-                            'Travel charge line item = zero; removed from checkout display',
-                        ],
-                        [
-                            <strong>Flexi — Artist Cancels After Advance</strong>,
-                            'Both advance and any balance paid are fully refunded. Artist receives Rs. 0.',
-                            'Full reversal of all escrowed amounts via Cashfree Refund API',
-                        ],
-                        [
-                            <strong>Dispute Before OTP</strong>,
-                            'Escrow frozen immediately. Booking flagged as DISPUTED. Manual review via Cashfree dashboard. Funds released or refunded only after investigation.',
-                            'Cashfree escrow freeze. Booking status → DISPUTED. Manual review workflow triggered',
-                        ],
-                    ]}
-                />
-            </Section>
-
-            {/* 10. Terms for Customers */}
-            <Section id="customer-terms" title="10. Terms for Customers">
+            {/* 7. Terms for Customers */}
+            <Section id="customer-terms" title="7. Terms for Customers">
                 <SubHeading>Eligibility</SubHeading>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>
@@ -555,8 +370,8 @@ artist_payout     = artist_price                   [always protected]`}
                     <li>You are solely responsible for maintaining confidentiality of your login credentials</li>
                     <li>
                         Report unauthorized account use immediately to{' '}
-                        <a href="mailto:support@mimora.in" className="text-[#E84A7F] hover:underline">
-                            support@mimora.in
+                        <a href="mailto:support@mimora.co.in" className="text-[#E84A7F] hover:underline">
+                            support@mimora.co.in
                         </a>
                     </li>
                     <li>Multiple accounts for the same individual are prohibited</li>
@@ -571,12 +386,12 @@ artist_payout     = artist_price                   [always protected]`}
                         Cashfree
                     </li>
                     <li>
-                        Calendar slot is blocked only after escrow confirmation — no slot is guaranteed without payment
+                        Calendar slot is blocked only after escrow confirmation: no slot is guaranteed without payment
                     </li>
-                    <li>All charges are displayed before payment and locked — no recalculation after booking</li>
+                    <li>All charges are displayed before payment and locked: no recalculation after booking</li>
                 </ol>
 
-                <SubHeading>OTP — Critical Warning</SubHeading>
+                <SubHeading>OTP: Critical Warning</SubHeading>
                 <Callout tone="amber">
                     By sharing the OTP with the Artist, you confirm that the service has been delivered to your
                     satisfaction. <strong>Do NOT share the OTP</strong> if service has not been delivered or if you
@@ -587,7 +402,7 @@ artist_payout     = artist_price                   [always protected]`}
                 <ul className="list-disc pl-6 space-y-1">
                     <li>Treat Artists with respect and professionalism</li>
                     <li>For at-home bookings, provide a safe, hygienic, and accessible environment</li>
-                    <li>Do not solicit Artists for services outside the Platform — permanent ban may apply</li>
+                    <li>Do not solicit Artists for services outside the Platform; permanent ban may apply</li>
                     <li>Do not submit false reviews or fraudulent dispute claims</li>
                 </ul>
 
@@ -614,8 +429,8 @@ artist_payout     = artist_price                   [always protected]`}
                 </p>
             </Section>
 
-            {/* 11. Terms for Artists */}
-            <Section id="artist-terms" title="11. Terms for Artists">
+            {/* 8. Terms for Artists */}
+            <Section id="artist-terms" title="8. Terms for Artists">
                 <SubHeading>Independent Contractor Status</SubHeading>
                 <p>
                     Artists operate exclusively as <strong>independent freelance contractors.</strong> No
@@ -638,37 +453,26 @@ artist_payout     = artist_price                   [always protected]`}
                         time, and location
                     </li>
                     <li>
-                        Use only genuine, non-expired, hygienic, and skin-safe products — Artists are solely liable
+                        Use only genuine, non-expired, hygienic, and skin-safe products; Artists are solely liable
                         for adverse reactions
                     </li>
                     <li>Services must be performed in safe and sanitary environments</li>
                 </ul>
 
-                <SubHeading>OTP — Critical Rule</SubHeading>
+                <SubHeading>OTP: Critical Rule</SubHeading>
                 <Callout tone="amber">
                     Artists must never coerce, pressure, or mislead Customers into sharing the OTP before the service
                     is fully and satisfactorily delivered. Fraudulent OTP collection is grounds for permanent removal.
                 </Callout>
 
-                <SubHeading>Artist Cancellation Consequences</SubHeading>
-                <LegalTable
-                    headers={['Consequence', 'Detail']}
-                    rows={[
-                        ['Customer refund', 'Automatic 100% refund regardless of timing or reason'],
-                        ['Artist payout', 'Zero — no payout for any cancelled booking'],
-                        ['Flexi advance', 'Advance fully returned to Customer as a financial penalty'],
-                        ['Account impact', 'Repeated cancellations may result in suspension or reduced visibility'],
-                    ]}
-                />
-
                 <SubHeading>Payment & Payout</SubHeading>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>
-                        Artist payout = Artist's service price — <strong>Mimora never deducts from the Artist's
+                        Artist payout = Artist's service price: <strong>Mimora never deducts from the Artist's
                         stated price</strong>
                     </li>
                     <li>Payouts processed via Cashfree typically <strong>within 1–3 business days</strong> after OTP confirmation</li>
-                    <li>Tips belong entirely to the Artist — not subject to Platform commission</li>
+                    <li>Tips belong entirely to the Artist: not subject to Platform commission</li>
                     <li>Direct payments for Platform-originated bookings are strictly prohibited</li>
                 </ul>
 
@@ -697,24 +501,24 @@ artist_payout     = artist_price                   [always protected]`}
                 </p>
             </Section>
 
-            {/* 12. Data Storage & Security */}
-            <Section id="data-security" title="12. Data Storage & Security">
+            {/* 9. Data Storage & Security */}
+            <Section id="data-security" title="9. Data Storage & Security">
                 <LegalTable
                     headers={['Measure', 'Detail']}
                     rows={[
                         ['Encryption in transit', 'All data uses TLS/HTTPS'],
                         ['Encryption at rest', "Sensitive data fields encrypted in Mimora's database"],
-                        ['Password hashing', 'bcrypt — never stored in plaintext'],
+                        ['Password hashing', 'bcrypt: never stored in plaintext'],
                         ['Access control', 'Internal access limited to authorized personnel on need-to-know basis'],
                         ['Audit logging', 'All access to sensitive records is logged'],
-                        ['Payment security', 'Cashfree is PCI-DSS compliant — full card data never touches Mimora servers'],
-                        ['KYC data', "Stored only by the KYC partner (DigiLocker) — not on Mimora's infrastructure"],
+                        ['Payment security', 'Cashfree is PCI-DSS compliant: full card data never touches Mimora servers'],
+                        ['KYC data', "Stored only by the KYC partner (DigiLocker): not on Mimora's infrastructure"],
                     ]}
                 />
             </Section>
 
-            {/* 13. Data Sharing */}
-            <Section id="data-sharing" title="13. Data Sharing">
+            {/* 10. Data Sharing */}
+            <Section id="data-sharing" title="10. Data Sharing">
                 <LegalTable
                     headers={['Party', 'What is Shared', 'Why']}
                     rows={[
@@ -740,8 +544,8 @@ artist_payout     = artist_price                   [always protected]`}
                 </p>
             </Section>
 
-            {/* 14. Location Data */}
-            <Section id="location-data" title="14. Location Data">
+            {/* 11. Location Data */}
+            <Section id="location-data" title="11. Location Data">
                 <ul className="list-disc pl-6 space-y-1">
                     <li>Used exclusively for: (a) travel charge calculation, and (b) matching Customers with nearby Artists</li>
                     <li>Collected only during active app use (no background collection unless explicitly permitted by user)</li>
@@ -753,26 +557,8 @@ artist_payout     = artist_price                   [always protected]`}
                 </ul>
             </Section>
 
-            {/* 15. User Rights */}
-            <Section id="user-rights" title="15. User Rights">
-                <LegalTable
-                    headers={['Right', 'Description', 'How to Exercise']}
-                    rows={[
-                        ['Access', 'Request a copy of personal data Mimora holds about you', 'Email privacy@mimora.in'],
-                        ['Correction', 'Request correction of inaccurate or incomplete data', 'Update in-app or email privacy@mimora.in'],
-                        ['Deletion', 'Request deletion of personal data (subject to legal retention obligations)', 'Email privacy@mimora.in'],
-                        ['Portability', 'Request data in a structured, machine-readable format', 'Email privacy@mimora.in'],
-                        ['Withdrawal of Consent', 'Withdraw consent to data processing (may affect Platform access)', 'Email privacy@mimora.in'],
-                        ['Grievance Redressal', 'Raise a complaint about data processing', 'Contact Grievance Officer below'],
-                    ]}
-                />
-                <p>
-                    Mimora will respond to all verified data rights requests within <strong>30 days.</strong>
-                </p>
-            </Section>
-
-            {/* 16. Data Retention */}
-            <Section id="data-retention" title="16. Data Retention">
+            {/* 12. Data Retention */}
+            <Section id="data-retention" title="12. Data Retention">
                 <LegalTable
                     headers={['Data Type', 'Retention Period']}
                     rows={[
@@ -786,29 +572,16 @@ artist_payout     = artist_price                   [always protected]`}
                 />
             </Section>
 
-            {/* 17. Children's Privacy */}
-            <Section id="childrens-privacy" title="17. Children's Privacy">
-                <p>
-                    The Mimora platform is <strong>not intended for individuals under 18 years of age.</strong> Mimora
-                    does not knowingly collect personal data from minors. If you believe a minor has provided personal
-                    information without parental consent, contact{' '}
-                    <a href="mailto:privacy@mimora.in" className="text-[#E84A7F] hover:underline">
-                        privacy@mimora.in
-                    </a>{' '}
-                    and Mimora will delete such information.
-                </p>
-            </Section>
-
-            {/* 18. Dispute Resolution */}
-            <Section id="dispute-resolution" title="18. Dispute Resolution">
+            {/* 13. Dispute Resolution */}
+            <Section id="dispute-resolution" title="13. Dispute Resolution">
                 <SubHeading>Internal Process</SubHeading>
                 <LegalTable
                     headers={['Step', 'Action', 'Timeline']}
                     rows={[
-                        ['1 — Contact Support', 'Raise a dispute ticket via support@mimora.in or in-app within 48 hours of the disputed event', 'Within 48 hours of incident'],
-                        ['2 — Review', 'Mimora reviews booking records, OTP logs, payment history, and evidence', '5–7 business days'],
-                        ['3 — Decision', 'Written resolution issued; Cashfree instructed to release or refund as applicable', 'After review'],
-                        ['4 — Escalation', 'If dissatisfied, parties may pursue resolution through competent courts or consumer forums', 'As applicable'],
+                        ['1: Contact Support', 'Raise a dispute ticket via support@mimora.co.in or in-app within 48 hours of the disputed event', 'Within 48 hours of incident'],
+                        ['2: Review', 'Mimora reviews booking records, OTP logs, payment history, and evidence', '5–7 business days'],
+                        ['3: Decision', 'Written resolution issued; Cashfree instructed to release or refund as applicable', 'After review'],
+                        ['4: Escalation', 'If dissatisfied, parties may pursue resolution through competent courts or consumer forums', 'As applicable'],
                     ]}
                 />
                 <p>
@@ -832,38 +605,13 @@ artist_payout     = artist_price                   [always protected]`}
                 <SubHeading>Force Majeure</SubHeading>
                 <p>
                     Mimora is not liable for failure to perform any obligation due to causes beyond its reasonable
-                    control — acts of God, government orders, internet disruptions, natural disasters, pandemics, or
+                    control: acts of God, government orders, internet disruptions, natural disasters, pandemics, or
                     third-party service provider failures (including Cashfree outages).
                 </p>
             </Section>
 
-            {/* 19. Grievance Officer */}
-            <Section id="grievance-officer" title="19. Grievance Officer">
-                <p>
-                    As required by the Information Technology (Intermediary Guidelines and Digital Media Ethics Code)
-                    Rules, 2021:
-                </p>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>
-                        <strong>Name:</strong> [Grievance Officer Name]
-                    </li>
-                    <li>
-                        <strong>Email:</strong>{' '}
-                        <a href="mailto:privacy@mimora.in" className="text-[#E84A7F] hover:underline">
-                            privacy@mimora.in
-                        </a>
-                    </li>
-                    <li>
-                        <strong>Address:</strong> [Mimora's Registered Address]
-                    </li>
-                    <li>
-                        <strong>Response:</strong> Within 48 hours of receipt; resolution within 30 days
-                    </li>
-                </ul>
-            </Section>
-
-            {/* 20. Changes to This Policy */}
-            <Section id="changes" title="20. Changes to This Policy">
+            {/* 14. Changes to This Policy */}
+            <Section id="changes" title="14. Changes to This Policy">
                 <p>
                     Mimora reserves the right to update this Policy at any time. Significant changes will be
                     communicated via registered email or in-app notification. Continued use of the Platform after
@@ -874,19 +622,17 @@ artist_payout     = artist_price                   [always protected]`}
             {/* Agreement */}
             <Section id="agreement" title="Agreement">
                 <p>
-                    By registering for and using the Mimora platform, all users — Customers and Artists alike — confirm
-                    they have read, understood, and unconditionally agree to all terms, policies, and conditions in this
-                    document.
+                    By registering for and using the Mimora platform, you confirm that you have read, understood, and
+                    accept all the terms and conditions set out above.
                 </p>
-                <LegalTable
-                    headers={['Purpose', 'Contact']}
-                    rows={[
-                        ['Privacy & data requests', 'privacy@mimora.in'],
-                        ['Legal', 'legal@mimora.in'],
-                        ['Support', 'support@mimora.in'],
-                    ]}
-                />
-                <p className="text-sm text-[#999]">© 2025 Mimora. All rights reserved.</p>
+                <p>
+                    For any queries, please contact us at{' '}
+                    <a href="mailto:support@mimora.co.in" className="text-[#E84A7F] hover:underline">
+                        support@mimora.co.in
+                    </a>
+                    .
+                </p>
+                <p className="text-sm text-[#999]">© 2025 MimoraLLP. All rights reserved.</p>
             </Section>
         </LegalLayout>
     );

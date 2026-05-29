@@ -1,4 +1,4 @@
-import LegalLayout, {
+﻿import LegalLayout, {
     Section,
     SubHeading,
     LegalTable,
@@ -27,18 +27,14 @@ function TermsOfService() {
                     </p>
                     <p className="mt-1">
                         <strong>Contact:</strong>{' '}
-                        <a href="mailto:legal@mimora.in" className="text-[#E84A7F] hover:underline">
-                            legal@mimora.in
-                        </a>{' '}
-                        |{' '}
-                        <a href="mailto:support@mimora.in" className="text-[#E84A7F] hover:underline">
-                            support@mimora.in
+                        <a href="mailto:support@mimora.co.in" className="text-[#E84A7F] hover:underline">
+                            support@mimora.co.in
                         </a>
                     </p>
                 </>
             }
         >
-            {/* 10. Terms for Customers */}
+            {/* 1. Terms for Customers */}
             <Section id="customer-terms" title="1. Terms for Customers">
                 <SubHeading>Eligibility</SubHeading>
                 <ul className="list-disc pl-6 space-y-1">
@@ -60,8 +56,8 @@ function TermsOfService() {
                     <li>You are solely responsible for maintaining confidentiality of your login credentials</li>
                     <li>
                         Report unauthorized account use immediately to{' '}
-                        <a href="mailto:support@mimora.in" className="text-[#E84A7F] hover:underline">
-                            support@mimora.in
+                        <a href="mailto:support@mimora.co.in" className="text-[#E84A7F] hover:underline">
+                            support@mimora.co.in
                         </a>
                     </li>
                     <li>Multiple accounts for the same individual are prohibited</li>
@@ -76,12 +72,12 @@ function TermsOfService() {
                         Cashfree
                     </li>
                     <li>
-                        Calendar slot is blocked only after escrow confirmation — no slot is guaranteed without payment
+                        Calendar slot is blocked only after escrow confirmation: no slot is guaranteed without payment
                     </li>
-                    <li>All charges are displayed before payment and locked — no recalculation after booking</li>
+                    <li>All charges are displayed before payment and locked: no recalculation after booking</li>
                 </ol>
 
-                <SubHeading>OTP — Critical Warning</SubHeading>
+                <SubHeading>OTP: Critical Warning</SubHeading>
                 <Callout tone="amber">
                     By sharing the OTP with the Artist, you confirm that the service has been delivered to your
                     satisfaction. <strong>Do NOT share the OTP</strong> if service has not been delivered or if you
@@ -92,7 +88,7 @@ function TermsOfService() {
                 <ul className="list-disc pl-6 space-y-1">
                     <li>Treat Artists with respect and professionalism</li>
                     <li>For at-home bookings, provide a safe, hygienic, and accessible environment</li>
-                    <li>Do not solicit Artists for services outside the Platform — permanent ban may apply</li>
+                    <li>Do not solicit Artists for services outside the Platform; permanent ban may apply</li>
                     <li>Do not submit false reviews or fraudulent dispute claims</li>
                 </ul>
 
@@ -119,7 +115,7 @@ function TermsOfService() {
                 </p>
             </Section>
 
-            {/* 11. Terms for Artists */}
+            {/* 2. Terms for Artists */}
             <Section id="artist-terms" title="2. Terms for Artists">
                 <SubHeading>Independent Contractor Status</SubHeading>
                 <p>
@@ -143,37 +139,26 @@ function TermsOfService() {
                         time, and location
                     </li>
                     <li>
-                        Use only genuine, non-expired, hygienic, and skin-safe products — Artists are solely liable
+                        Use only genuine, non-expired, hygienic, and skin-safe products; Artists are solely liable
                         for adverse reactions
                     </li>
                     <li>Services must be performed in safe and sanitary environments</li>
                 </ul>
 
-                <SubHeading>OTP — Critical Rule</SubHeading>
+                <SubHeading>OTP: Critical Rule</SubHeading>
                 <Callout tone="amber">
                     Artists must never coerce, pressure, or mislead Customers into sharing the OTP before the service
                     is fully and satisfactorily delivered. Fraudulent OTP collection is grounds for permanent removal.
                 </Callout>
 
-                <SubHeading>Artist Cancellation Consequences</SubHeading>
-                <LegalTable
-                    headers={['Consequence', 'Detail']}
-                    rows={[
-                        ['Customer refund', 'Automatic 100% refund regardless of timing or reason'],
-                        ['Artist payout', 'Zero — no payout for any cancelled booking'],
-                        ['Flexi advance', 'Advance fully returned to Customer as a financial penalty'],
-                        ['Account impact', 'Repeated cancellations may result in suspension or reduced visibility'],
-                    ]}
-                />
-
                 <SubHeading>Payment & Payout</SubHeading>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>
-                        Artist payout = Artist's service price — <strong>Mimora never deducts from the Artist's
+                        Artist payout = Artist's service price: <strong>Mimora never deducts from the Artist's
                         stated price</strong>
                     </li>
                     <li>Payouts processed via Cashfree typically <strong>within 1–3 business days</strong> after OTP confirmation</li>
-                    <li>Tips belong entirely to the Artist — not subject to Platform commission</li>
+                    <li>Tips belong entirely to the Artist: not subject to Platform commission</li>
                     <li>Direct payments for Platform-originated bookings are strictly prohibited</li>
                 </ul>
 
@@ -202,16 +187,16 @@ function TermsOfService() {
                 </p>
             </Section>
 
-            {/* 18. Dispute Resolution */}
+            {/* 3. Dispute Resolution */}
             <Section id="dispute-resolution" title="3. Dispute Resolution">
                 <SubHeading>Internal Process</SubHeading>
                 <LegalTable
                     headers={['Step', 'Action', 'Timeline']}
                     rows={[
-                        ['1 — Contact Support', 'Raise a dispute ticket via support@mimora.in or in-app within 48 hours of the disputed event', 'Within 48 hours of incident'],
-                        ['2 — Review', 'Mimora reviews booking records, OTP logs, payment history, and evidence', '5–7 business days'],
-                        ['3 — Decision', 'Written resolution issued; Cashfree instructed to release or refund as applicable', 'After review'],
-                        ['4 — Escalation', 'If dissatisfied, parties may pursue resolution through competent courts or consumer forums', 'As applicable'],
+                        ['1: Contact Support', 'Raise a dispute ticket via support@mimora.co.in or in-app within 48 hours of the disputed event', 'Within 48 hours of incident'],
+                        ['2: Review', 'Mimora reviews booking records, OTP logs, payment history, and evidence', '5–7 business days'],
+                        ['3: Decision', 'Written resolution issued; Cashfree instructed to release or refund as applicable', 'After review'],
+                        ['4: Escalation', 'If dissatisfied, parties may pursue resolution through competent courts or consumer forums', 'As applicable'],
                     ]}
                 />
                 <p>
@@ -235,31 +220,24 @@ function TermsOfService() {
                 <SubHeading>Force Majeure</SubHeading>
                 <p>
                     Mimora is not liable for failure to perform any obligation due to causes beyond its reasonable
-                    control — acts of God, government orders, internet disruptions, natural disasters, pandemics, or
+                    control: acts of God, government orders, internet disruptions, natural disasters, pandemics, or
                     third-party service provider failures (including Cashfree outages).
                 </p>
             </Section>
 
-            {/* 20. Agreement */}
+            {/* 4. Agreement */}
             <Section id="agreement" title="4. Agreement">
                 <p>
-                    Mimora reserves the right to update these Terms at any time. Significant changes will be
-                    communicated via registered email or in-app notification. Continued use of the Platform after
-                    changes constitutes acceptance.
+                    By registering for and using the Mimora platform, you confirm that you have read, understood, and
+                    accept all the terms and conditions set out above.
                 </p>
                 <p>
-                    By registering for and using the Mimora platform, all users — Customers and Artists alike — confirm
-                    they have read, understood, and unconditionally agree to all terms, policies, and conditions in this
-                    document.
+                    For any queries, please contact us at{' '}
+                    <a href="mailto:support@mimora.co.in" className="text-[#E84A7F] hover:underline">
+                        support@mimora.co.in
+                    </a>
+                    .
                 </p>
-                <LegalTable
-                    headers={['Purpose', 'Contact']}
-                    rows={[
-                        ['Privacy & data requests', 'privacy@mimora.in'],
-                        ['Legal', 'legal@mimora.in'],
-                        ['Support', 'support@mimora.in'],
-                    ]}
-                />
                 <p className="text-sm text-[#999]">© 2025 Mimora. All rights reserved.</p>
             </Section>
         </LegalLayout>
