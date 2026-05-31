@@ -22,8 +22,8 @@ function TermsOfService() {
             intro={
                 <>
                     <p>
-                        These Terms govern your use of the Mimora platform as a Customer or an Artist. By registering
-                        for and using Mimora, you agree to all terms set out below.
+                        These Terms govern your use of the Mimora LLP platform as a Customer or an Artist. By registering
+                        for and using Mimora LLP, you agree to all terms set out below.
                     </p>
                     <p className="mt-1">
                         <strong>Contact:</strong>{' '}
@@ -68,8 +68,7 @@ function TermsOfService() {
                     <li>Browse Artist profiles and select a service</li>
                     <li>Submit a booking request</li>
                     <li>
-                        Booking is confirmed only after: (a) Artist accepts AND (b) Customer completes full payment via
-                        Cashfree
+                        Booking is confirmed only after: (a) Artist accepts AND (b) Customer completes full payment via the authorized payment service provider
                     </li>
                     <li>
                         Calendar slot is blocked only after escrow confirmation: no slot is guaranteed without payment
@@ -81,7 +80,7 @@ function TermsOfService() {
                 <Callout tone="amber">
                     By sharing the OTP with the Artist, you confirm that the service has been delivered to your
                     satisfaction. <strong>Do NOT share the OTP</strong> if service has not been delivered or if you
-                    have an unresolved dispute. Contact Mimora support before sharing in such cases.
+                    have an unresolved dispute. Contact Mimora LLP support before sharing in such cases.
                 </Callout>
 
                 <SubHeading>Customer Conduct</SubHeading>
@@ -102,7 +101,7 @@ function TermsOfService() {
                 </ul>
 
                 <SubHeading>Limitation of Liability</SubHeading>
-                <p>Mimora is not liable for:</p>
+                <p>Mimora LLP is not liable for:</p>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>Quality, safety, or outcomes of beauty services delivered by Artists</li>
                     <li>Allergic reactions, skin conditions, or health issues from Artist-applied products</li>
@@ -110,7 +109,7 @@ function TermsOfService() {
                     <li>Indirect, incidental, or consequential damages</li>
                 </ul>
                 <p>
-                    Mimora's total liability for any claim shall not exceed{' '}
+                    Mimora LLP's total liability for any claim shall not exceed{' '}
                     <strong>the amount paid by the Customer for the specific booking in dispute.</strong>
                 </p>
             </Section>
@@ -129,7 +128,7 @@ function TermsOfService() {
                     <li>Their own tools and consumable products</li>
                 </ul>
                 <p>
-                    Mimora does not provide employment benefits (PF, ESI, gratuity, paid leave, health insurance).
+                    Mimora LLP does not provide employment benefits (PF, ESI, gratuity, paid leave, health insurance).
                 </p>
 
                 <SubHeading>Service Delivery Obligations</SubHeading>
@@ -154,10 +153,10 @@ function TermsOfService() {
                 <SubHeading>Payment & Payout</SubHeading>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>
-                        Artist payout = Artist's service price: <strong>Mimora never deducts from the Artist's
+                        Artist payout = Artist's service price: <strong>Mimora LLP never deducts from the Artist's
                         stated price</strong>
                     </li>
-                    <li>Payouts processed via Cashfree typically <strong>within 1–3 business days</strong> after OTP confirmation</li>
+                    <li>Payouts are processed by the authorized payment service provider typically <strong>within 1–3 business days</strong> after OTP confirmation</li>
                     <li>Tips belong entirely to the Artist: not subject to Platform commission</li>
                     <li>Direct payments for Platform-originated bookings are strictly prohibited</li>
                 </ul>
@@ -177,7 +176,7 @@ function TermsOfService() {
 
                 <SubHeading>Termination</SubHeading>
                 <p>
-                    Mimora may suspend or permanently remove Artist accounts for: Terms violations, repeated poor
+                    Mimora LLP may suspend or permanently remove Artist accounts for: Terms violations, repeated poor
                     quality, sustained low ratings, fraudulent activities, or conduct detrimental to the Platform's
                     reputation.
                 </p>
@@ -194,8 +193,8 @@ function TermsOfService() {
                     headers={['Step', 'Action', 'Timeline']}
                     rows={[
                         ['1: Contact Support', 'Raise a dispute ticket via support@mimora.co.in or in-app within 48 hours of the disputed event', 'Within 48 hours of incident'],
-                        ['2: Review', 'Mimora reviews booking records, OTP logs, payment history, and evidence', '5–7 business days'],
-                        ['3: Decision', 'Written resolution issued; Cashfree instructed to release or refund as applicable', 'After review'],
+                        ['2: Review', 'Mimora LLP reviews booking records, OTP logs, payment history, and evidence', '5–7 business days'],
+                        ['3: Decision', 'Written resolution issued; the payment service provider is instructed to release or refund as applicable', 'After review'],
                         ['4: Escalation', 'If dissatisfied, parties may pursue resolution through competent courts or consumer forums', 'As applicable'],
                     ]}
                 />
@@ -219,16 +218,16 @@ function TermsOfService() {
 
                 <SubHeading>Force Majeure</SubHeading>
                 <p>
-                    Mimora is not liable for failure to perform any obligation due to causes beyond its reasonable
+                    Mimora LLP is not liable for failure to perform any obligation due to causes beyond its reasonable
                     control: acts of God, government orders, internet disruptions, natural disasters, pandemics, or
-                    third-party service provider failures (including Cashfree outages).
+                    third-party service provider failures (including authorized payment service provider outages).
                 </p>
             </Section>
 
             {/* 4. Agreement */}
             <Section id="agreement" title="4. Agreement">
                 <p>
-                    By registering for and using the Mimora platform, you confirm that you have read, understood, and
+                    By registering for and using the Mimora LLP platform, you confirm that you have read, understood, and
                     accept all the terms and conditions set out above.
                 </p>
                 <p>
@@ -238,7 +237,7 @@ function TermsOfService() {
                     </a>
                     .
                 </p>
-                <p className="text-sm text-[#999]">© 2025 Mimora. All rights reserved.</p>
+                <p className="text-sm text-[#999]">© 2025 Mimora LLP. All rights reserved.</p>
             </Section>
         </LegalLayout>
     );

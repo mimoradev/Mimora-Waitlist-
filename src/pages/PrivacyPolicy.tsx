@@ -34,17 +34,17 @@ function PrivacyPolicy() {
             {/* 1. Who We Are */}
             <Section id="who-we-are" title="1. Who We Are">
                 <p>
-                    Mimora is an <strong>intermediary marketplace platform</strong> that connects independent
-                    freelance beauty and wellness artists with customers seeking such services. Mimora does not
-                    directly provide beauty or wellness services. It acts solely as:
+                    Mimora LLP is an <strong>intermediary marketplace platform</strong> that connects independent
+                    freelance beauty artists with customers seeking such services. Mimora LLP does not directly
+                    provide beauty services. It acts solely as:
                 </p>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>A technology facilitator</li>
-                    <li>A payment escrow intermediary (via Cashfree)</li>
+                    <li>A payment facilitation and settlement intermediary through authorized third-party payment service providers</li>
                     <li>A dispute facilitation platform</li>
                 </ul>
                 <p>
-                    The service contract is between the <strong>Customer and the Artist</strong>. Mimora's
+                    The service contract is between the <strong>Customer and the Artist</strong>. Mimora LLP's
                     liability is limited to functions it directly controls: platform access, payment escrow, and
                     dispute facilitation.
                 </p>
@@ -61,7 +61,7 @@ function PrivacyPolicy() {
                         ['Booking', 'Service history, booking dates, locations, package selections'],
                         [
                             'Payment',
-                            'Payment method type, UPI handle / masked card details (full card data handled only by Cashfree, not stored by Mimora)',
+                            'Payment method type, UPI handle / masked card details (full card data handled only by the authorized payment service provider, not stored by Mimora LLP)',
                         ],
                         ['Location', 'GPS location for travel charge calculation and Artist matching'],
                         ['Device & Usage', 'Device type, OS, app version, IP address, session logs'],
@@ -76,13 +76,13 @@ function PrivacyPolicy() {
                         ['Identity', 'Name, mobile number, email address, profile photograph'],
                         [
                             'KYC',
-                            'PAN Card or Aadhaar number (processed via DigiLocker / KYC partner, raw documents not stored on Mimora servers)',
+                            'PAN Card or Aadhaar number (processed via DigiLocker / KYC partner, raw documents not stored on Mimora LLP servers)',
                         ],
                         [
                             'Identity Verification',
                             'Live facial recognition capture, face-match result (Verified / Not Verified)',
                         ],
-                        ['Payment', 'Bank account number + IFSC or UPI handle (stored securely for Cashfree payout)'],
+                        ['Payment', 'Bank account number + IFSC or UPI handle (stored securely for payout via the authorized payment service provider)'],
                         ['Professional', 'Service listings, pricing, availability calendar, portfolio photographs'],
                         ['Booking & Payout', 'Booking history, OTP confirmation records, payout transaction history'],
                         ['Device & Usage', 'Device type, OS, app version, IP address, session logs'],
@@ -102,7 +102,7 @@ function PrivacyPolicy() {
                         ],
                         [
                             'Payment Processing',
-                            'Creating Cashfree payment orders, managing escrow, processing Artist payouts',
+                            'Creating payment orders with the authorized payment service provider, managing escrow, processing Artist payouts',
                         ],
                         [
                             'KYC & Fraud Prevention',
@@ -129,7 +129,7 @@ function PrivacyPolicy() {
                         accept bookings or receive payouts
                     </li>
                     <li>
-                        KYC is <strong>not required for Customers</strong> at this time (Mimora reserves the right to
+                        KYC is <strong>not required for Customers</strong> at this time (Mimora LLP reserves the right to
                         introduce Customer verification for specific services or transaction thresholds in the future)
                     </li>
                     <li>
@@ -172,7 +172,7 @@ function PrivacyPolicy() {
                     <li>Platform receives a verification status confirmation from the KYC provider</li>
                     <li>
                         Document data is processed and stored by the KYC partner -{' '}
-                        <strong>Mimora does not store raw document copies on its own servers</strong>
+                        <strong>Mimora LLP does not store raw document copies on its own servers</strong>
                     </li>
                 </ol>
 
@@ -193,7 +193,7 @@ function PrivacyPolicy() {
 
                 <SubHeading>4.5 Re-Verification</SubHeading>
                 <p>
-                    Mimora reserves the right to require re-verification of any Artist at any time if there are
+                    Mimora LLP reserves the right to require re-verification of any Artist at any time if there are
                     grounds to suspect identity fraud, account takeover, or material changes in circumstances. Failure
                     to complete re-verification within the notified period results in account suspension.
                 </p>
@@ -247,7 +247,7 @@ function PrivacyPolicy() {
                     headers={['Scenario', 'Refund']}
                     rows={[
                         ['Artist cancels (any time)', <strong>100%</strong>],
-                        ['Customer cancels &gt; 1 hour before', <strong>100%</strong>],
+                        ['Customer cancels > 1 hour before', <strong>100%</strong>],
                         ['Customer cancels ≤ 1 hour before', <strong>NO REFUND</strong>],
                         ['OTP not verified by end of day (11:55 PM cron)', <strong>100%</strong>],
                         ['Artist no-show / service not delivered', <strong>100%</strong>],
@@ -259,7 +259,7 @@ function PrivacyPolicy() {
                     headers={['Scenario', 'Refund']}
                     rows={[
                         ['Artist cancels (any time)', <strong>100%</strong>],
-                        ['Customer cancels &gt; 12 hours before', <strong>100%</strong>],
+                        ['Customer cancels > 12 hours before', <strong>100%</strong>],
                         ['Customer cancels 2–12 hours before', <strong>50%</strong>],
                         ['Customer cancels ≤ 2 hours before', <strong>NO REFUND</strong>],
                         ['OTP not verified by end of day', <strong>100%</strong>],
@@ -277,10 +277,10 @@ function PrivacyPolicy() {
                 <LegalTable
                     headers={['Scenario', 'Outcome']}
                     rows={[
-                        ['Customer pays trial fee', 'Held in Cashfree escrow'],
+                        ['Customer pays trial fee', 'Held in escrow via the authorized payment service provider'],
                         ['After trial → satisfied', 'Trial fee adjusted against full booking'],
                         ['After trial → walks away', <strong>Trial fee NON-REFUNDABLE</strong>],
-                        ['Customer cancels &gt; 48 hrs before trial', <strong>100% REFUND</strong>],
+                        ['Customer cancels > 48 hrs before trial', <strong>100% REFUND</strong>],
                         ['Customer cancels ≤ 48 hrs before trial', <strong>NO REFUND</strong>],
                         ['Artist cancels trial (any time)', <strong>100% REFUND</strong>],
                     ]}
@@ -290,9 +290,9 @@ function PrivacyPolicy() {
                 <LegalTable
                     headers={['Scenario', 'Refund']}
                     rows={[
-                        ['Customer cancels &gt; 7 days before event', <strong>100%</strong>],
+                        ['Customer cancels > 7 days before event', <strong>100%</strong>],
                         ['Customer cancels 3–7 days before event', <strong>50%</strong>],
-                        ['Customer cancels &lt; 3 days before event', <strong>NO REFUND</strong>],
+                        ['Customer cancels < 3 days before event', <strong>NO REFUND</strong>],
                         ['Artist cancels (any time)', <strong>100%</strong>],
                         ['OTP not verified by end of day', <strong>100% (auto cron)</strong>],
                     ]}
@@ -324,9 +324,9 @@ function PrivacyPolicy() {
                     rows={[
                         ['Artist cancels any time', <strong>100% REFUND</strong>, <strong>100% REFUND</strong>],
                         ['Customer cancels: balance not yet paid', 'NON-REFUNDABLE', 'Not paid: N/A'],
-                        ['Customer cancels &gt; 7 days before event', 'NON-REFUNDABLE', <strong>100% REFUND</strong>],
+                        ['Customer cancels > 7 days before event', 'NON-REFUNDABLE', <strong>100% REFUND</strong>],
                         ['Customer cancels 3–7 days before event', 'NON-REFUNDABLE', <strong>50% REFUND</strong>],
-                        ['Customer cancels &lt; 3 days before event', 'NON-REFUNDABLE', <strong>NO REFUND</strong>],
+                        ['Customer cancels < 3 days before event', 'NON-REFUNDABLE', <strong>NO REFUND</strong>],
                         ['OTP not verified by end of service day', 'NON-REFUNDABLE', <strong>100% REFUND</strong>],
                     ]}
                 />
@@ -340,11 +340,11 @@ function PrivacyPolicy() {
 
                 <SubHeading>6.4 Refund Processing</SubHeading>
                 <ul className="list-disc pl-6 space-y-1">
-                    <li>All refunds are processed via Cashfree to the Customer's <strong>original payment method</strong></li>
+                    <li>All refunds are processed via the authorized payment service provider to the Customer's <strong>original payment method</strong></li>
                     <li>UPI: typically <strong>1–2 business days</strong></li>
                     <li>Bank account / card: <strong>5–7 business days</strong></li>
                     <li>The Secure Booking Fee and Travel Charge are included in full refunds</li>
-                    <li>Cashfree's payment reversal fees are borne by Mimora: not charged to the Customer</li>
+                    <li>The payment provider's reversal fees are borne by Mimora LLP, not charged to the Customer</li>
                 </ul>
             </Section>
 
@@ -382,8 +382,7 @@ function PrivacyPolicy() {
                     <li>Browse Artist profiles and select a service</li>
                     <li>Submit a booking request</li>
                     <li>
-                        Booking is confirmed only after: (a) Artist accepts AND (b) Customer completes full payment via
-                        Cashfree
+                        Booking is confirmed only after: (a) Artist accepts AND (b) Customer completes full payment via the authorized payment service provider
                     </li>
                     <li>
                         Calendar slot is blocked only after escrow confirmation: no slot is guaranteed without payment
@@ -395,7 +394,7 @@ function PrivacyPolicy() {
                 <Callout tone="amber">
                     By sharing the OTP with the Artist, you confirm that the service has been delivered to your
                     satisfaction. <strong>Do NOT share the OTP</strong> if service has not been delivered or if you
-                    have an unresolved dispute. Contact Mimora support before sharing in such cases.
+                    have an unresolved dispute. Contact Mimora LLP support before sharing in such cases.
                 </Callout>
 
                 <SubHeading>Customer Conduct</SubHeading>
@@ -416,7 +415,7 @@ function PrivacyPolicy() {
                 </ul>
 
                 <SubHeading>Limitation of Liability</SubHeading>
-                <p>Mimora is not liable for:</p>
+                <p>Mimora LLP is not liable for:</p>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>Quality, safety, or outcomes of beauty services delivered by Artists</li>
                     <li>Allergic reactions, skin conditions, or health issues from Artist-applied products</li>
@@ -424,7 +423,7 @@ function PrivacyPolicy() {
                     <li>Indirect, incidental, or consequential damages</li>
                 </ul>
                 <p>
-                    Mimora's total liability for any claim shall not exceed{' '}
+                    Mimora LLP's total liability for any claim shall not exceed{' '}
                     <strong>the amount paid by the Customer for the specific booking in dispute.</strong>
                 </p>
             </Section>
@@ -443,7 +442,7 @@ function PrivacyPolicy() {
                     <li>Their own tools and consumable products</li>
                 </ul>
                 <p>
-                    Mimora does not provide employment benefits (PF, ESI, gratuity, paid leave, health insurance).
+                    Mimora LLP does not provide employment benefits (PF, ESI, gratuity, paid leave, health insurance).
                 </p>
 
                 <SubHeading>Service Delivery Obligations</SubHeading>
@@ -468,10 +467,10 @@ function PrivacyPolicy() {
                 <SubHeading>Payment & Payout</SubHeading>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>
-                        Artist payout = Artist's service price: <strong>Mimora never deducts from the Artist's
+                        Artist payout = Artist's service price: <strong>Mimora LLP never deducts from the Artist's
                         stated price</strong>
                     </li>
-                    <li>Payouts processed via Cashfree typically <strong>within 1–3 business days</strong> after OTP confirmation</li>
+                    <li>Payouts are processed by the authorized payment service provider typically <strong>within 1–3 business days</strong> after OTP confirmation</li>
                     <li>Tips belong entirely to the Artist: not subject to Platform commission</li>
                     <li>Direct payments for Platform-originated bookings are strictly prohibited</li>
                 </ul>
@@ -491,7 +490,7 @@ function PrivacyPolicy() {
 
                 <SubHeading>Termination</SubHeading>
                 <p>
-                    Mimora may suspend or permanently remove Artist accounts for: Terms violations, repeated poor
+                    Mimora LLP may suspend or permanently remove Artist accounts for: Terms violations, repeated poor
                     quality, sustained low ratings, fraudulent activities, or conduct detrimental to the Platform's
                     reputation.
                 </p>
@@ -507,12 +506,12 @@ function PrivacyPolicy() {
                     headers={['Measure', 'Detail']}
                     rows={[
                         ['Encryption in transit', 'All data uses TLS/HTTPS'],
-                        ['Encryption at rest', "Sensitive data fields encrypted in Mimora's database"],
+                        ['Encryption at rest', "Sensitive data fields encrypted in Mimora LLP's database"],
                         ['Password hashing', 'bcrypt: never stored in plaintext'],
                         ['Access control', 'Internal access limited to authorized personnel on need-to-know basis'],
                         ['Audit logging', 'All access to sensitive records is logged'],
-                        ['Payment security', 'Cashfree is PCI-DSS compliant: full card data never touches Mimora servers'],
-                        ['KYC data', "Stored only by the KYC partner (DigiLocker): not on Mimora's infrastructure"],
+                        ['Payment security', 'Authorized payment service providers are PCI-DSS compliant: full card data never touches Mimora LLP servers'],
+                        ['KYC data', "Stored only by the KYC partner (DigiLocker): not on Mimora LLP's infrastructure"],
                     ]}
                 />
             </Section>
@@ -522,7 +521,7 @@ function PrivacyPolicy() {
                 <LegalTable
                     headers={['Party', 'What is Shared', 'Why']}
                     rows={[
-                        ['Cashfree Payments', 'Booking amount, order details, Artist bank/UPI details', 'Payment collection and payout'],
+                        ['Authorized Payment Service Provider', 'Booking amount, order details, Artist bank/UPI details', 'Payment collection and payout'],
                         ['KYC Partner / DigiLocker', 'Document type and verification request', 'Artist KYC verification'],
                         ['Facial Recognition Provider', 'Profile photo + live capture', 'Artist identity verification'],
                         ['SMS / Notification Provider', 'Mobile number', 'OTP and booking notifications'],
@@ -539,7 +538,7 @@ function PrivacyPolicy() {
                     <li>Use personal data for targeted advertising</li>
                 </ul>
                 <p>
-                    <strong>Legal disclosures:</strong> Mimora may disclose data if required by valid court order,
+                    <strong>Legal disclosures:</strong> Mimora LLP may disclose data if required by valid court order,
                     government directive, or regulatory mandate. Users will be notified where legally permitted.
                 </p>
             </Section>
@@ -579,8 +578,8 @@ function PrivacyPolicy() {
                     headers={['Step', 'Action', 'Timeline']}
                     rows={[
                         ['1: Contact Support', 'Raise a dispute ticket via support@mimora.co.in or in-app within 48 hours of the disputed event', 'Within 48 hours of incident'],
-                        ['2: Review', 'Mimora reviews booking records, OTP logs, payment history, and evidence', '5–7 business days'],
-                        ['3: Decision', 'Written resolution issued; Cashfree instructed to release or refund as applicable', 'After review'],
+                        ['2: Review', 'Mimora LLP reviews booking records, OTP logs, payment history, and evidence', '5–7 business days'],
+                        ['3: Decision', 'Written resolution issued; the payment service provider is instructed to release or refund as applicable', 'After review'],
                         ['4: Escalation', 'If dissatisfied, parties may pursue resolution through competent courts or consumer forums', 'As applicable'],
                     ]}
                 />
@@ -604,16 +603,16 @@ function PrivacyPolicy() {
 
                 <SubHeading>Force Majeure</SubHeading>
                 <p>
-                    Mimora is not liable for failure to perform any obligation due to causes beyond its reasonable
+                    Mimora LLP is not liable for failure to perform any obligation due to causes beyond its reasonable
                     control: acts of God, government orders, internet disruptions, natural disasters, pandemics, or
-                    third-party service provider failures (including Cashfree outages).
+                    third-party service provider failures (including authorized payment service provider outages).
                 </p>
             </Section>
 
             {/* 14. Changes to This Policy */}
             <Section id="changes" title="14. Changes to This Policy">
                 <p>
-                    Mimora reserves the right to update this Policy at any time. Significant changes will be
+                    Mimora LLP reserves the right to update this Policy at any time. Significant changes will be
                     communicated via registered email or in-app notification. Continued use of the Platform after
                     changes constitutes acceptance.
                 </p>
@@ -622,7 +621,7 @@ function PrivacyPolicy() {
             {/* Agreement */}
             <Section id="agreement" title="Agreement">
                 <p>
-                    By registering for and using the Mimora platform, you confirm that you have read, understood, and
+                    By registering for and using the Mimora LLP platform, you confirm that you have read, understood, and
                     accept all the terms and conditions set out above.
                 </p>
                 <p>
@@ -632,7 +631,7 @@ function PrivacyPolicy() {
                     </a>
                     .
                 </p>
-                <p className="text-sm text-[#999]">© 2025 MimoraLLP. All rights reserved.</p>
+                <p className="text-sm text-[#999]">© 2025 Mimora LLP. All rights reserved.</p>
             </Section>
         </LegalLayout>
     );
